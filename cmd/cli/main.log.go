@@ -38,7 +38,6 @@ func main() {
 
 	// {"level":"INFO","time":"2025-09-14T11:55:28.549+0700","caller":"cli/main.log.go:36","msg":"Test","Name":"Line 1","Age":16}
 	// {"level":"ERROR","time":"2025-09-14T11:55:28.549+0700","caller":"cli/main.log.go:37","msg":"Test","Name":"Line 2","Age":16}
-
 }
 
 // Format logs
