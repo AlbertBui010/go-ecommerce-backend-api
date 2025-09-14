@@ -1,12 +1,37 @@
 package routers
 
 import (
+	"fmt"
+
 	c "github.com/albertbui010/go-ecommerce-backend-api/internal/controller"
+	"github.com/albertbui010/go-ecommerce-backend-api/internal/middlewares"
 	"github.com/gin-gonic/gin"
 )
 
+func AA() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		fmt.Println("Before ---> AA")
+		c.Next()
+		fmt.Println("After ---> AA")
+	}
+}
+func BB() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		fmt.Println("Before ---> BB")
+		c.Next()
+		fmt.Println("After ---> BB")
+	}
+}
+func CC(c *gin.Context) {
+	fmt.Println("Before ---> AA")
+	c.Next()
+	fmt.Println("After ---> AA")
+}
+
 func NewRouter() *gin.Engine {
 	r := gin.Default()
+
+	r.Use(middlewares.AuthenMiddleware(), AA(), BB(), CC)
 
 	v1 := r.Group("/v1/2025") // Version 1
 	{
