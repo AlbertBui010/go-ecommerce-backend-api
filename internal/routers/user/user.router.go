@@ -13,12 +13,12 @@ func (pr *UserRouter) InitUserRouter(Router *gin.RouterGroup) {
 	}
 	// private router
 
-	userRouterPrivate := Router.Group("/user")
-	// userRouterPrivate.Use(Limiter())
-	// userRouterPrivate.Use(Auth())
-	// userRouterPrivate.Use(Permission())
-	{
-		userRouterPrivate.POST("/register")
-		userRouterPrivate.POST("/otp")
-	}
+	// userRouterPrivate := Router.Group("/user")
+	// // userRouterPrivate.Use(Limiter())
+	// // userRouterPrivate.Use(Auth())
+	// // userRouterPrivate.Use(Permission())
+	// {
+	// 	userRouterPrivate.POST("/register")
+	// 	userRouterPrivate.POST("/otp")
+	// }
 }
