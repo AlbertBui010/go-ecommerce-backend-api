@@ -1,0 +1,12 @@
+### User Registration
+POST http://localhost:8081/v1/2025/user/register
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "purpose": "test"
+}
+
+### User Registration
+GET http://localhost:8081/v1/2025/checkStatus
+Content-Type: application/json

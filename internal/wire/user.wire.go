@@ -13,6 +13,7 @@ func InitUserRouterHandler() (*controller.UserController, error) {
 	wire.Build(
 		// Declare dependencies here
 		repo.NewUserRepository,
+		repo.NewUserAuthRepository,
 		service.NewUserService,
 		controller.NewUserController,
 	)

@@ -22,3 +22,8 @@ redis:
   port: 6379
   password:
   database: 0
+smtp:
+  smtpHost: sandbox.smtp.mailtrap.io
+  smtpPort: "587"
+  smtpUsername: "19ed241340b8da"
+  smtpPassword: "6e8df0c2db1ba1"

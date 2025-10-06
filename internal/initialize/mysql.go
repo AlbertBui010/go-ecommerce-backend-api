@@ -40,7 +40,7 @@ func InitMysql() {
 
 	// Set pool
 	SetPool()
-	genTableDAO()
+	// genTableDAO()
 	migrateTables()
 }
 
@@ -80,7 +80,8 @@ func migrateTables() {
 	err := global.Mdb.AutoMigrate(
 		// &po.Role{},
 		// &po.User{},
-		&model.GoCrmUserV2{},
+		// &model.GoCrmUserV2{},
+		&model.GoCrmUser{},
 	)
 	if err != nil {
 		fmt.Println("Migrating table failed:", err)

@@ -5,6 +5,7 @@ type Config struct {
 	MySql  MySQLSetting  `mapstructure:"mysql"`
 	Logger LoggerSetting `mapstructure:"logger"`
 	Redis  RedisSetting  `mapstructure:"redis"`
+	SMTP   SMTPSetting   `mapstructure:"smtp"`
 }
 
 type ServerSetting struct {
@@ -37,4 +38,11 @@ type LoggerSetting struct {
 	MaxBackups int    `mapstructure:"max_backups"`
 	MaxAge     int    `mapstructure:"max_age"`
 	Compress   bool   `mapstructure:"compress"`
+}
+
+type SMTPSetting struct {
+	SMTPHost     string `mapstructure:"smtpHost"`
+	SMTPPort     string `mapstructure:"smtpPort"`
+	SMTPUsername string `mapstructure:"smtpUsername"`
+	SMTPPassword string `mapstructure:"smtpPassword"`
 }

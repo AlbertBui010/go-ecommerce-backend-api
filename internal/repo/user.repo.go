@@ -1,14 +1,9 @@
 package repo
 
-// type UserRepository struct{}
-
-// func NewUserRepository() *UserRepository {
-// 	return &UserRepository{}
-// }
-
-// func (ur *UserRepository) GetUserById() string {
-// 	return "Hello"
-// }
+import (
+	"github.com/albertbui010/go-ecommerce-backend-api/global"
+	"github.com/albertbui010/go-ecommerce-backend-api/internal/model"
+)
 
 // Interface version
 type IUserRepository interface {
@@ -24,5 +19,6 @@ func NewUserRepository() IUserRepository {
 
 // GetUserByEmail implements IUserRepository.
 func (ur *userRepository) GetUserByEmail(email string) bool {
-	return true
+	row := global.Mdb.Table(TableNameGoCrmUser).Where("usr_email = ?", email).First(&model.GoCrmUser{}).RowsAffected
+	return row != NumberNull
 }
